@@ -14,6 +14,9 @@ module.exports = {
       maxWidth: {
         '9xl': '96rem'
       },
+      backgroundImage:{
+          avt1: 'url("@assets/images/avt1")'
+      },
       fontSize: {
         '4xl': '2.5rem'
       },

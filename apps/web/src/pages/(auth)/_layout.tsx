@@ -5,21 +5,16 @@ import Sidebar from './_components/Sidebar'
 import { getToken } from '@/utils/token'
 
 export default function Component() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen] = useState(true)
   const accessToken = getToken()
-
-  const onToggle = () => {
-    setIsOpen(isOpen => !isOpen)
-  }
-
-  if (!accessToken) return <Navigate to="/" />
+  if (!accessToken) return <Navigate to="/login" />
 
   return (
     <div className="w-full">
-      <Header onToggle={onToggle} isOpen={isOpen} />
-      <div className="flex h-[calc(100vh-48px)]">
+      <Header />
+      <div className="flex">
         <Sidebar isOpen={isOpen} />
-        <div className="w-full p-10">
+        <div className="flex w-full justify-center">
           <Outlet />
         </div>
       </div>

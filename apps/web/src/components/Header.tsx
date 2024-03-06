@@ -27,7 +27,7 @@ export default function Header({ className, hasSearch = false }: HeaderProps) {
       )}
 
       <div className="flex gap-3">
-        <Link to="/host/homes" className="rounded-full p-3 hover:bg-gray-100">
+        <Link to="/" className="rounded-full p-3 hover:bg-gray-100">
           Airbnb your home
         </Link>
         <div className="rounded-full p-3 hover:bg-gray-100">

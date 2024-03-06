@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { Bookmark,  CircleFadingPlus,  Facebook,  MoveDown,  PersonStanding,  Users, Video } from 'lucide-react'
+import { Bookmark,  CircleFadingPlus,   MoveDown,  PersonStanding,  Users, Video } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 
 const SIDE_BAR = [
@@ -32,7 +32,7 @@ const SIDE_BAR = [
 ]
 const SIDE_BAR2 = [
   {
-    title: 'Facebook',
+    title: 'Ban quyền lực E21CQC',
     path: '/',
     icon: <CircleFadingPlus    className="text-primary"/>
   },
@@ -60,7 +60,7 @@ export default function Sidebar({ isOpen }: Props) {
   const currentPath = useLocation().pathname
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center bg-[#f0f2f5] border-none text-[#050505] '>
     <ul
       className={clsx('space-y-2 border-r p-4', {
         ' w-72': isOpen,
@@ -70,7 +70,7 @@ export default function Sidebar({ isOpen }: Props) {
       {SIDE_BAR.map(item => (
         <Link to={`/admin${item.path}`} key={item.title}>
           <li
-            className={clsx('flex cursor-pointer gap-4 rounded-sm px-6 py-2', {
+            className={clsx('flex cursor-pointer gap-4 rounded-sm px-6 py-2 font-bold', {
               'bg-primary': currentPath === `/admin${item.path}`,
               'text-white': currentPath === `/admin${item.path}`
             })}
@@ -80,14 +80,14 @@ export default function Sidebar({ isOpen }: Props) {
           </li>
         </Link>
       ))}
-      <hr/>
+      <hr className=' bg-slate-600'/>
 
     </ul>
-    <ul  className={clsx('space-y-2 border-r p-4 ', {
+    <ul  className={clsx('space-y-2 border-r p-4 text-[#050505] font-bold', {
         ' w-72': isOpen,
         'w-28': !isOpen
       })}>
-      <li className='flex cursor-pointer gap-4 rounded-sm px-6 py-2'>LOI TAT CUA BAN</li>
+      <li className='flex cursor-pointer gap-4 rounded-sm px-6 py-2 '>LOI TAT CUA BAN</li>
       {SIDE_BAR2.map(item => (
         <Link to={`/admin${item.path}`} key={item.title}>
           <li

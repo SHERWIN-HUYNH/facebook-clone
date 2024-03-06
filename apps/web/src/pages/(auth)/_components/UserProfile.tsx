@@ -20,7 +20,7 @@ export default function UserProfile() {
 
   const logOut = () => {
     removeToken()
-    navigate('/')
+    navigate('/login')
   }
 
   return (
